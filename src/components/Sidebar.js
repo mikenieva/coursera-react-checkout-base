@@ -33,10 +33,9 @@ export default function Sidebar() {
                             {
                                 currencies.map((e,i) => {
                                     return (
-                                            
-                                        <Link to={`/${e}`} className="bg-indigo-800 text-white group flex items-center px-2 py-2 text-sm font-medium">
+                                        <Link key={i} to={`/${e}`} className="bg-indigo-800 text-white group flex items-center px-2 py-2 text-sm font-medium">
                                             <svg className="mr-3 h-6 w-6 text-indigo-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
                                             </svg>
                                             {e}
                                         </Link>                                            

@@ -22,16 +22,18 @@ export default function CurrenciesRates() {
             const res = await axios.get(`https://api.exchangerate.host/timeseries?start_date=${date.startDate}&end_date=${date.endDate}&base=USD&symbols=${cur}`)
             
             const rates = await res.data.rates
+            const labels = Object.keys(rates)
             
-            const values = Object.keys(rates).map((e,i) => {
+            const dataValues = Object.keys(rates).map((e) => {
                 return rates[e][cur]
+                // rates."2020-01-01".ILS
             })
 
             setData({
-                labels: Object.keys(rates),
+                labels,
                 datasets: [{
                     label: `Un dólar, vale en ${cur}`,
-                    data: values,
+                    data: dataValues,
                     borderColor: "#000a8b",
                     pointBackgroundColor: "#f42534",
                     pointRadius: 7
@@ -45,7 +47,6 @@ export default function CurrenciesRates() {
 
 
     const handleDate = (e) => {
-        console.log(e.target.value)
         setDate({
             ...date,
             [e.target.name]: e.target.value
@@ -56,7 +57,7 @@ export default function CurrenciesRates() {
     return (
         <div className="w-full">
             <div className="w-80 px-10 pb-10 pt-5">
-                <label for="location" className="text-sm font-medium text-gray-700">Escoge una fecha de inicio</label>
+                <label htmlFor="date" className="text-sm font-medium text-gray-700">Escoge una fecha de inicio</label>
                 <input 
                     type="date"
                     onChange={(e) => handleDate(e)}
@@ -64,7 +65,7 @@ export default function CurrenciesRates() {
                     name="startDate"
                     className="flex-1 block w-full border-2 min-w-0 rounded text-sm border-gray-300"
                 />
-                <label for="location" className="text-sm font-medium text-gray-700 mt-10">Escoge una fecha de término</label>
+                <label htmlFor="date" className="text-sm font-medium text-gray-700 mt-10">Escoge una fecha de término</label>
                 <input 
                     type="date"
                     onChange={(e) => handleDate(e)}
@@ -73,7 +74,7 @@ export default function CurrenciesRates() {
                     className="flex-1 block w-full border-2 min-w-0 rounded text-sm border-gray-300"
                 />
             </div>
-            
+            <div className="px-7">
             {
                 loading ? 
                     <h1>Cargando...</h1> 
@@ -84,7 +85,7 @@ export default function CurrenciesRates() {
                     }}
                 />  
             }
-            
+            </div>
         </div>
     )
 }
