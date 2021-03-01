@@ -16,7 +16,7 @@ function App() {
     <>
       <Router>
 
-        <Header />
+        {/* <Header /> */}
         
         <div className="flex">
           <Sidebar />
