@@ -22,7 +22,7 @@ function App() {
           <Sidebar />
           
           <Switch>
-            <Route exact path="/:currency" component={CurrenciesRates} />
+            <Route exact  path="/:currency" component={CurrenciesRates} />
           </Switch>
         </div>
 
