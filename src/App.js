@@ -1,32 +1,24 @@
 import React from 'react'
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch
-} from 'react-router-dom'
 
 import Header from './components/Header'
-import Sidebar from './components/Sidebar'
-import CurrenciesRates from './components/CurrenciesRates'
+import Products from './components/Products'
+import Checkout from './components/Checkout'
+
+import ProductsState from './context/ProductsState'
 
 function App() {
 
   return (
     <>
-      <Router>
-
+      <ProductsState>
         <Header />
         
-        <div className="flex">
-          <Sidebar />
-          
-          <Switch>
-            <Route exact  path="/:currency" component={CurrenciesRates} />
-          </Switch>
-        </div>
-
-      </Router>
+          <div className="flex">
+            <Products />
+            <Checkout />
+          </div>
+        </ProductsState>
     </>
     
   );
