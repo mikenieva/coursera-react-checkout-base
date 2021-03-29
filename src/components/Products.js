@@ -24,7 +24,7 @@ const Products = () => {
                             
                             <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
                                 <div class="flex-1 flex flex-col p-8">
-                                <img class="w-auto h-32 flex-shrink-0 mx-auto bg-black" src="https://images.unsplash.com/photo-1561845730-208ad5910553?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="" />
+                                <img class="w-auto h-32 flex-shrink-0 mx-auto bg-black" src={elemento.img} alt="" />
                                 
                                 <h3 class="mt-6 text-gray-900 text-sm font-medium">{elemento.nombre}</h3>
                                 <dl class="mt-1 flex-grow flex flex-col justify-between">
