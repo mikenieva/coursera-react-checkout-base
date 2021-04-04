@@ -8,7 +8,9 @@ const Checkout = () => {
           <div class="border max-w-md w-full px-20 pt-3 pb-10">
             <div class="flex flex-row-reverse justify-between mt-6">
               <div class="">
-                <h3 class="font-extrabold text-gray-600">Precio Total</h3>
+                <h3 class="font-extrabold text-gray-600">
+                  Precio Total
+                </h3>
               </div>
             </div>
             <div class="flex items-center justify-between mt-10">
